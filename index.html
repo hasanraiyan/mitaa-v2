@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITAA - Design 2: The Scholarly Connection</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #404040; /* neutral-700 */
+            background-color: #f5f5f4; /* stone-100 */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.7;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #14532d; /* green-900 */
+            letter-spacing: -0.01em;
+        }
+        .font-heading { font-family: 'Playfair Display', serif; }
+        .font-body { font-family: 'Lato', sans-serif; }
+
+        /* Subtle pattern for texture - optional */
+        .textured-bg {
+          /* background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d1d5db' fill-opacity='0.15' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E"); */
+        }
+    </style>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+                 heading: ['Playfair Display', 'serif'],
+                 body: ['Lato', 'sans-serif'],
+            },
+            colors: {
+              // Primary: Deep Green, Accent: Gold/Tan, Neutral: Stone/Gray
+              green: { 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d', 950: '#052e16' },
+              amber: { 50: '#fffbeb', 100: '#fef3c7', 200: '#fde68a', 300: '#fcd34d', 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706', 700: '#b45309', 800: '#92400e', 900: '#78350f', 950: '#451a03' },
+              stone: { 50: '#fafaf9', 100: '#f5f5f4', 200: '#e7e5e4', 300: '#d6d3d1', 400: '#a8a29e', 500: '#78716c', 600: '#57534e', 700: '#44403c', 800: '#292524', 900: '#1c1917', 950: '#0c0a09' },
+              neutral: { 700: '#404040', 800: '#262626', 900: '#171717' } // Using neutral for general text
+            },
+             boxShadow: {
+                'subtle': '0 2px 8px -1px rgb(0 0 0 / 0.07), 0 1px 4px -2px rgb(0 0 0 / 0.05)',
+                'card': '0 4px 12px -2px rgb(0 0 0 / 0.08), 0 2px 6px -2px rgb(0 0 0 / 0.06)',
+             },
+             letterSpacing: {
+                 tight: '-.01em',
+             },
+          }
+        },
+      }
+    </script>
+
+</head>
+<body class="bg-stone-100 font-body text-neutral-700 antialiased">
+
+    <header class="bg-white shadow-subtle sticky top-0 z-50 border-b border-stone-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo & Title -->
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center space-x-2.5 group">
+                        <span class="w-8 h-8 bg-gradient-to-br from-green-700 to-green-900 rounded-md flex items-center justify-center text-white font-bold text-lg font-heading shadow-sm group-hover:scale-105 transition-transform">M</span>
+                        <div>
+                            <span class="font-heading text-xl font-bold text-green-900 group-hover:text-green-700 transition-colors">MITAA</span>
+                            <span class="text-xs text-stone-500 block leading-tight font-body tracking-wide">Muzaffarpur Institute of Technology Alumni Association</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-7 font-body text-sm font-medium">
+                    <a href="#" class="text-neutral-700 hover:text-green-700 transition-colors duration-200 border-b-2 border-transparent hover:border-amber-500 pb-1">Home</a>
+                    <a href="#about" class="text-neutral-700 hover:text-green-700 transition-colors duration-200 border-b-2 border-transparent hover:border-amber-500 pb-1">About</a>
+                    <a href="#membership" class="text-neutral-700 hover:text-green-700 transition-colors duration-200 border-b-2 border-transparent hover:border-amber-500 pb-1">Membership</a>
+                    <a href="#news-events" class="text-neutral-700 hover:text-green-700 transition-colors duration-200 border-b-2 border-transparent hover:border-amber-500 pb-1">News & Events</a>
+                    <a href="#" class="text-neutral-700 hover:text-green-700 transition-colors duration-200 border-b-2 border-transparent hover:border-amber-500 pb-1">Directory</a>
+                    <a href="#contact" class="text-neutral-700 hover:text-green-700 transition-colors duration-200 border-b-2 border-transparent hover:border-amber-500 pb-1">Contact</a>
+                </nav>
+
+                <!-- Action & Mobile Toggle -->
+                <div class="flex items-center space-x-3">
+                     <a href="#" class="hidden sm:inline-block font-body font-medium text-center px-4 py-1.5 rounded-md transition duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 shadow-sm border border-green-700 text-green-800 hover:bg-green-50 focus:ring-green-500 text-xs">Member Login</a>
+                    <button id="mobile-menu-button-2" aria-label="Toggle Menu" aria-controls="mobile-menu-2" aria-expanded="false" class="lg:hidden text-neutral-600 focus:outline-none p-2 rounded-md hover:bg-stone-100 transition-colors duration-200">
+                        <span class="sr-only">Open menu</span>
+                        <i class="fas fa-bars w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+         <!-- Mobile Menu -->
+         <div id="mobile-menu-2" class="lg:hidden hidden absolute top-full left-0 w-full bg-white shadow-md py-4 z-40 border-t border-stone-200">
+             <div class="px-6 space-y-2 font-body font-medium text-sm">
+                <a href="#" class="block py-2 text-neutral-700 hover:text-green-700 hover:bg-stone-50 rounded-md px-3 transition-colors duration-200">Home</a>
+                <a href="#about" class="block py-2 text-neutral-700 hover:text-green-700 hover:bg-stone-50 rounded-md px-3 transition-colors duration-200">About</a>
+                <a href="#membership" class="block py-2 text-neutral-700 hover:text-green-700 hover:bg-stone-50 rounded-md px-3 transition-colors duration-200">Membership</a>
+                <a href="#news-events" class="block py-2 text-neutral-700 hover:text-green-700 hover:bg-stone-50 rounded-md px-3 transition-colors duration-200">News & Events</a>
+                <a href="#" class="block py-2 text-neutral-700 hover:text-green-700 hover:bg-stone-50 rounded-md px-3 transition-colors duration-200">Directory</a>
+                <a href="#contact" class="block py-2 text-neutral-700 hover:text-green-700 hover:bg-stone-50 rounded-md px-3 transition-colors duration-200">Contact</a>
+                <a href="#" class="block mt-3 w-full text-center font-body font-medium px-5 py-2 rounded-md transition duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 shadow-sm border border-green-700 text-green-800 hover:bg-green-50 focus:ring-green-500">Member Login</a>
+             </div>
+         </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-white textured-bg border-b border-stone-200">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h1 class="text-4xl sm:text-5xl md:text-6xl font-heading mb-6 leading-tight">
+                            A Legacy of Connection, A Future of Opportunity.
+                        </h1>
+                        <p class="text-lg md:text-xl text-neutral-600 mb-10 font-body leading-relaxed">
+                            Welcome to the MIT Alumni Association – your dedicated platform for reconnecting with peers, celebrating achievements, and contributing to the continued excellence of Muzaffarpur Institute of Technology.
+                        </p>
+                        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                             <a href="#membership" class="inline-block font-body font-medium text-center px-7 py-3 rounded-md transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 shadow-md bg-green-700 hover:bg-green-800 text-white focus:ring-green-500 transform hover:-translate-y-0.5">Explore Life Membership</a>
+                            <a href="#about" class="inline-block font-body font-medium text-center px-7 py-3 rounded-md transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 shadow-sm bg-stone-200 hover:bg-stone-300 text-stone-800 focus:ring-stone-400">Learn About MITAA</a>
+                        </div>
+                    </div>
+                    <div class="hidden lg:block text-center">
+                        <!-- Placeholder for a more subtle/classic image, perhaps illustration or framed photo -->
+                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Alumni Community Concept" class="rounded-lg shadow-card mx-auto max-w-md border-4 border-white">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- About Section -->
+        <section id="about" class="py-20 md:py-28 bg-stone-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center">
+                     <h2 class="text-sm font-semibold text-amber-600 uppercase tracking-wider mb-3 font-body">Our Foundation</h2>
+                    <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-8">Dedicated to MIT and its Alumni</h3>
+                    <p class="text-base md:text-lg text-neutral-600 leading-relaxed lg:leading-loose max-w-3xl mx-auto font-body mb-8">
+                        The MIT Alumni Association (MITAA) serves as the bridge between Muzaffarpur Institute of Technology and its esteemed graduates worldwide. Our mission is to foster a spirit of loyalty and fraternity, support the institute's goals, and provide avenues for professional and personal growth for all members.
+                    </p>
+                    <a href="#" class="font-medium text-green-700 hover:text-green-900 transition duration-300 group inline-flex items-center font-body text-base border-b border-green-700 hover:border-green-900 pb-0.5">
+                        Read Our Charter
+                        <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section (Simplified) -->
+        <section class="py-16 bg-green-800 text-white">
+             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-3xl lg:text-4xl font-bold font-heading text-amber-300 mb-1">10k+</div>
+                        <div class="text-xs font-body uppercase tracking-wide text-green-100 opacity-80">Global Alumni</div>
+                    </div>
+                     <div>
+                        <div class="text-3xl lg:text-4xl font-bold font-heading text-amber-300 mb-1">50+</div>
+                        <div class="text-xs font-body uppercase tracking-wide text-green-100 opacity-80">Years Strong</div>
+                    </div>
+                     <div>
+                        <div class="text-3xl lg:text-4xl font-bold font-heading text-amber-300 mb-1">500+</div>
+                        <div class="text-xs font-body uppercase tracking-wide text-green-100 opacity-80">Life Members</div>
+                    </div>
+                     <div>
+                        <div class="text-3xl lg:text-4xl font-bold font-heading text-amber-300 mb-1">Active</div>
+                        <div class="text-xs font-body uppercase tracking-wide text-green-100 opacity-80">Community</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News & Events Section -->
+        <section id="news-events" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                 <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+                     <h2 class="text-sm font-semibold text-amber-600 uppercase tracking-wider mb-3 font-body">Community Pulse</h2>
+                    <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">Association Updates & Events</h3>
+                    <p class="text-base md:text-lg text-neutral-600 leading-relaxed font-body mt-4">Stay informed about the latest MITAA activities, member news, and upcoming opportunities to connect.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- News Card 1 -->
+                    <article class="bg-stone-50 rounded-lg shadow-card overflow-hidden border border-stone-200 flex flex-col h-full group">
+                        <div class="p-6 flex-grow">
+                             <p class="text-xs font-semibold text-green-700 mb-2 font-body uppercase tracking-wide">News Update</p>
+                            <h4 class="font-semibold font-heading text-xl text-green-900 mb-3 group-hover:text-amber-700 transition-colors"><a href="#">Life Member Database Digitized</a></h4>
+                            <p class="text-sm text-neutral-600 mb-4 line-clamp-3 font-body">The comprehensive database of all life members is now available in Excel format, sorted batch-wise for easy access and reference.</p>
+                        </div>
+                        <div class="bg-stone-100 p-4 border-t border-stone-200">
+                            <a href="#" class="font-medium text-green-700 hover:text-green-900 transition duration-300 group inline-flex items-center font-body text-sm">
+                                Learn More <i class="fas fa-arrow-right ml-1.5 text-[10px] transition-transform duration-300 group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                     <!-- News Card 2 -->
+                     <article class="bg-stone-50 rounded-lg shadow-card overflow-hidden border border-stone-200 flex flex-col h-full group">
+                        <div class="p-6 flex-grow">
+                             <p class="text-xs font-semibold text-green-700 mb-2 font-body uppercase tracking-wide">Member Services</p>
+                            <h4 class="font-semibold font-heading text-xl text-green-900 mb-3 group-hover:text-amber-700 transition-colors"><a href="#">Payment Receipts & Certificates Online</a></h4>
+                            <p class="text-sm text-neutral-600 mb-4 line-clamp-3 font-body">Access your categorized payment receipts and printable life membership certificates conveniently through the members' portal/WhatsApp group.</p>
+                        </div>
+                         <div class="bg-stone-100 p-4 border-t border-stone-200">
+                            <a href="#" class="font-medium text-green-700 hover:text-green-900 transition duration-300 group inline-flex items-center font-body text-sm">
+                                Access Files <i class="fas fa-arrow-right ml-1.5 text-[10px] transition-transform duration-300 group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                     <!-- Event Card 1 -->
+                     <article class="bg-stone-50 rounded-lg shadow-card overflow-hidden border border-stone-200 flex flex-col h-full group">
+                        <div class="p-6 flex-grow">
+                             <p class="text-xs font-semibold text-green-700 mb-2 font-body uppercase tracking-wide">Upcoming Event</p>
+                            <h4 class="font-semibold font-heading text-xl text-green-900 mb-3 group-hover:text-amber-700 transition-colors"><a href="#">Annual Homecoming Dinner</a></h4>
+                            <p class="text-sm text-neutral-600 mb-4 line-clamp-3 font-body">Join fellow alumni for an evening of nostalgia, networking, and celebration back on campus. Mark your calendars for Oct 12th!</p>
+                        </div>
+                         <div class="bg-stone-100 p-4 border-t border-stone-200">
+                            <a href="#" class="font-medium text-green-700 hover:text-green-900 transition duration-300 group inline-flex items-center font-body text-sm">
+                                Register Now <i class="fas fa-arrow-right ml-1.5 text-[10px] transition-transform duration-300 group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                 <div class="text-center mt-12">
+                    <a href="#" class="inline-block font-body font-medium text-center px-6 py-2.5 rounded-md transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 shadow-sm border border-stone-300 text-stone-700 hover:bg-stone-100 focus:ring-stone-400 text-sm">View All Updates & Events</a>
+                </div>
+            </div>
+        </section>
+
+         <!-- Membership Section -->
+        <section id="membership" class="py-20 md:py-28 bg-gradient-to-b from-green-900 to-green-950 text-white textured-bg">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="text-center lg:text-left">
+                        <h2 class="text-sm font-semibold !text-amber-300 uppercase tracking-wider mb-3 font-body">Enduring Value</h2>
+                        <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold !text-white mb-8 font-heading">Secure Your Lifelong MITAA Connection</h3>
+                        <p class="text-base md:text-lg text-green-100 opacity-90 mb-8 leading-relaxed font-body">
+                           Life Membership offers unparalleled access and continuous engagement with the MIT alumni network. Enjoy exclusive resources, event privileges, and the distinction of being a core supporter of MITAA's mission.
+                        </p>
+                        <div class="space-y-3 mb-10 text-green-50">
+                            <p class="flex items-center font-body"><i class="fas fa-star text-amber-300 mr-3 w-4 text-center"></i> Full access to the searchable Alumni Directory.</p>
+                            <p class="flex items-center font-body"><i class="fas fa-star text-amber-300 mr-3 w-4 text-center"></i> Priority registration & discounts for key events.</p>
+                            <p class="flex items-center font-body"><i class="fas fa-star text-amber-300 mr-3 w-4 text-center"></i> Permanent digital membership credentials.</p>
+                             <p class="flex items-center font-body"><i class="fas fa-star text-amber-300 mr-3 w-4 text-center"></i> Contribute directly to alumni initiatives.</p>
+                        </div>
+                         <a href="#" class="inline-block font-body font-medium text-center px-8 py-3 rounded-md transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-900 shadow-lg bg-amber-400 hover:bg-amber-500 text-amber-950 focus:ring-amber-300 transform hover:scale-105">
+                            Become a Life Member
+                        </a>
+                    </div>
+                     <div class="hidden lg:flex justify-center items-center">
+                         <!-- Placeholder for an elegant visual, maybe a crest or abstract graphic -->
+                        <div class="w-60 h-60 rounded-full bg-gradient-to-br from-amber-300 to-amber-500 flex items-center justify-center shadow-xl opacity-80">
+                            <i class="fas fa-certificate text-green-900 text-7xl"></i>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="bg-stone-800 text-stone-300 pt-16 md:pt-20 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Footer Column 1: MITAA Info -->
+                <div>
+                    <h4 class="text-base font-semibold text-white uppercase tracking-wider mb-4 font-heading">MITAA</h4>
+                     <p class="text-sm leading-relaxed mb-4 text-stone-400">
+                        Muzaffarpur Institute of Technology Alumni Association. Connecting our proud past with a promising future.
+                    </p>
+                     <div class="flex space-x-4">
+                        <a href="#" aria-label="Facebook" class="text-stone-400 hover:text-amber-400 transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn" class="text-stone-400 hover:text-amber-400 transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="WhatsApp" class="text-stone-400 hover:text-green-400 transition duration-300"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Footer Column 2: Quick Links -->
+                <div>
+                    <h4 class="text-base font-semibold text-white uppercase tracking-wider mb-4 font-heading">Quick Links</h4>
+                    <ul class="space-y-2.5 text-sm font-body">
+                        <li><a href="#about" class="hover:text-amber-400 transition-colors duration-300">About MITAA</a></li>
+                        <li><a href="#membership" class="hover:text-amber-400 transition-colors duration-300">Membership</a></li>
+                        <li><a href="#news-events" class="hover:text-amber-400 transition-colors duration-300">News & Events</a></li>
+                        <li><a href="#" class="hover:text-amber-400 transition-colors duration-300">Alumni Directory (Members)</a></li>
+                        <li><a href="#" class="hover:text-amber-400 transition-colors duration-300">Financial Overview</a></li>
+                    </ul>
+                </div>
+
+                <!-- Footer Column 3: Resources -->
+                 <div>
+                    <h4 class="text-base font-semibold text-white uppercase tracking-wider mb-4 font-heading">Resources</h4>
+                    <ul class="space-y-2.5 text-sm font-body">
+                        <li><a href="#" class="hover:text-amber-400 transition-colors duration-300">Contact Secretary</a></li>
+                        <li><a href="#" class="hover:text-amber-400 transition-colors duration-300">Volunteer</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors duration-300">MIT Official Website</a></li>
+                        <li><a href="#" class="hover:text-amber-400 transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-amber-400 transition-colors duration-300">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                 <!-- Footer Column 4: Contact Info -->
+                 <div>
+                    <h4 class="text-base font-semibold text-white uppercase tracking-wider mb-4 font-heading">Contact Us</h4>
+                    <ul class="space-y-3 text-sm font-body">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt w-4 mt-1 mr-2.5 flex-shrink-0 text-stone-500"></i>
+                            <span class="text-stone-400">MIT Campus, Muzaffarpur, Bihar 842003</span>
+                        </li>
+                        <li class="flex items-start">
+                             <i class="fas fa-envelope w-4 mt-1 mr-2.5 flex-shrink-0 text-stone-500"></i>
+                            <a href="mailto:secretary.mitaa@mitmuzaffarpur.org" class="hover:text-amber-400 transition-colors duration-300 break-all">secretary.mitaa@mitmuzaffarpur.org</a>
+                        </li>
+                         <li class="flex items-start">
+                            <i class="fas fa-phone w-4 mt-1 mr-2.5 flex-shrink-0 text-stone-500"></i>
+                             <span class="text-stone-400">[Association Contact Phone]</span>
+                         </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-stone-700 pt-6 text-center text-xs font-body text-stone-500">
+                 <p>© <script>document.write(new Date().getFullYear())</script> MIT Alumni Association. All Rights Reserved.</p>
+                 <p class="mt-1">Design Concept 2 for MITAA Showcase.</p>
+            </div>
+        </div>
+    </footer>
+
+     <script>
+         // Script for Mobile Menu Toggle (Design 2)
+         const menuButton2 = document.getElementById('mobile-menu-button-2');
+         const mobileMenu2 = document.getElementById('mobile-menu-2');
+         const mobileMenuIcon2 = menuButton2.querySelector('i');
+
+         menuButton2.addEventListener('click', () => {
+             const isExpanded = menuButton2.getAttribute('aria-expanded') === 'true';
+             menuButton2.setAttribute('aria-expanded', !isExpanded);
+             mobileMenu2.classList.toggle('hidden');
+
+              if (!isExpanded) {
+                  mobileMenuIcon2.classList.remove('fa-bars');
+                  mobileMenuIcon2.classList.add('fa-times');
+              } else {
+                   mobileMenuIcon2.classList.remove('fa-times');
+                   mobileMenuIcon2.classList.add('fa-bars');
+              }
+         });
+
+         // Close mobile menu when a link inside it is clicked
+         const mobileMenuLinks2 = mobileMenu2.querySelectorAll('a');
+         mobileMenuLinks2.forEach(link => {
+             link.addEventListener('click', () => {
+                 menuButton2.setAttribute('aria-expanded', 'false');
+                 mobileMenu2.classList.add('hidden');
+                 mobileMenuIcon2.classList.remove('fa-times');
+                 mobileMenuIcon2.classList.add('fa-bars');
+             });
+         });
+     </script>
+
+</body>
+</html>
